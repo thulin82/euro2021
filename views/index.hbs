@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EURO2021</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="flex-container">
+        <div class="flex-item">
+            <div class="flex-item-top"><h2>Grupp A</h2></div>
+                        {{#each A.matches}}
+                            <li>
+                                <strong>{{ homeTeam.name }}</strong>
+                                 vs
+                                <strong>{{ awayTeam.name }}</strong>
+                                {{score.fullTime.homeTeam}} - {{score.fullTime.awayTeam}}
+                            </li>
+                        {{/each}}
+        </div>
+        <div class="flex-item">
+            <div class="flex-item-top"><h2>Grupp B</h2></div>
+                        {{#each B.matches}}
+                            <li>
+                                <strong>{{ homeTeam.name }}</strong>
+                                 vs
+                                <strong>{{ awayTeam.name }}</strong>
+                                {{score.fullTime.homeTeam}} - {{score.fullTime.awayTeam}}
+                            </li>
+                        {{/each}}
+        </div>
+        <div class="flex-item">
+            <div class="flex-item-top"><h2>Grupp C</h2></div>
+                        {{#each C.matches}}
+                            <li>
+                                <strong>{{ homeTeam.name }}</strong>
+                                 vs
+                                <strong>{{ awayTeam.name }}</strong>
+                                {{score.fullTime.homeTeam}} - {{score.fullTime.awayTeam}}
+                            </li>
+                        {{/each}}
+        </div>
+        <div class="flex-item">
+            <div class="flex-item-top"><h2>Grupp D</h2></div>
+                        {{#each D.matches}}
+                            <li>
+                                <strong>{{ homeTeam.name }}</strong>
+                                 vs
+                                <strong>{{ awayTeam.name }}</strong>
+                                {{score.fullTime.homeTeam}} - {{score.fullTime.awayTeam}}
+                            </li>
+                        {{/each}}
+        </div>
+        <div class="flex-item">
+            <div class="flex-item-top"><h2>Grupp E</h2></div>
+                        {{#each E.matches}}
+                            <li>
+                                <strong>{{ homeTeam.name }}</strong>
+                                 vs
+                                <strong>{{ awayTeam.name }}</strong>
+                                {{score.fullTime.homeTeam}} - {{score.fullTime.awayTeam}}
+                            </li>
+                        {{/each}}
+        </div>
+        <div class="flex-item">
+            <div class="flex-item-top"><h2>Grupp F</h2></div>
+                        {{#each F.matches}}
+                            <li>
+                                <strong>{{ homeTeam.name }}</strong>
+                                 vs
+                                <strong>{{ awayTeam.name }}</strong>
+                                {{score.fullTime.homeTeam}} - {{score.fullTime.awayTeam}}
+                            </li>
+                        {{/each}}
+        </div>
+    </div>
+</body>
+</html>

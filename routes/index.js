@@ -22,7 +22,7 @@ router.get('/', function (req, response) {
         axios.get(process.env.URL + "&group=Group%20F", opt)
     ]).then(axios.spread((resp1, resp2, resp3, resp4, resp5, resp6) => {
         response.set('Content-Type', 'text/html');
-        response.render('index2',
+        response.render('index',
             {A: resp1.data, B: resp2.data,
                 C: resp3.data, D: resp4.data,
                 E: resp5.data, F: resp6.data});

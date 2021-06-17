@@ -37,6 +37,32 @@ router.get('/', function (req, response) {
 });
 
 /**
+ * /standings Route, get group standings
+ *
+ *
+*/
+router.get('/standings', function (req, response) {
+    var opt = {
+        method: 'GET',
+        url: "https://" + process.env.HOST + "/tournaments/get-standings",
+        params: {tournamentId: '1', seasonId: '26542'},
+        headers: {
+            'x-rapidapi-key': process.env.API_KEY2,
+            'x-rapidapi-host': process.env.HOST
+        }
+    };
+
+    axios.request(opt).then(function (resp) {
+        response.set('Content-Type', 'text/html');
+        response.render('standings', {result: resp.data.standings});
+    }).catch(function (error) {
+        console.error(error);
+    });
+});
+
+
+
+/**
  * /scorers Route, get top scorers
  *
  *

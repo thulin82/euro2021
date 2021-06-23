@@ -3,8 +3,13 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const apicache = require('apicache');
+const hbs = require('hbs');
 
 dotenv.config({ path: './config/config.env' });
+
+hbs.registerHelper("isPlayOffs", function(value) {
+    return value == 'Playoffs';
+});
 
 const app = express();
 const cache = apicache.middleware;

@@ -150,3 +150,10 @@
   .playoff-table .playoff-table-tour:last-child .playoff-table-pair:before {
     display: none;
   }
+  .score {
+    text-transform: uppercase;
+    float: right;
+    font-weight: bold;
+    position: absolute;
+    right: 5px;
+  }

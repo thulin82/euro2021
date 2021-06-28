@@ -60,8 +60,6 @@ router.get('/standings', function (req, response) {
     });
 });
 
-
-
 /**
  * /scorers Route, get top scorers
  *
@@ -84,5 +82,16 @@ router.get('/scorers', function (req, response) {
             console.log(error);
         }));
 });
+
+/**
+ * /playoff Route, get tournament bracket
+ *
+ *
+*/
+router.get('/playoff', function (req, response) {
+    response.set('Content-Type', 'text/html');
+    response.render('playoff');
+});
+
 
 module.exports = router;

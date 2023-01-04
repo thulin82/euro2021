@@ -11,6 +11,11 @@ hbs.registerHelper("isPlayOffs", function(value) {
     return value == 'Playoffs';
 });
 
+hbs.registerHelper('limit', function (arr, limit) {
+    if (!Array.isArray(arr)) { return []; }
+    return arr.slice(0, limit);
+});
+
 const app = express();
 const cache = apicache.middleware;
 

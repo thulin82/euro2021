@@ -67,20 +67,21 @@ router.get('/standings', function (req, response) {
 */
 router.get('/scorers', function (req, response) {
     const opt = {
+        method: 'GET',
+        url: "https://" + process.env.HOST + "/tournaments/get-top-players",
+        params: {tournamentId: '1', seasonId: '26542'},
         headers: {
-            "X-Auth-Token": process.env.API_KEY,
-            'Accept': 'application/json'
+            'x-rapidapi-key': process.env.API_KEY2,
+            'x-rapidapi-host': process.env.HOST
         }
     };
 
-    axios.get(process.env.URL + "/scorers", opt)
-        .then((resp) => {
-            response.set('Content-Type', 'text/html');
-            response.render('scorers', {result: resp.data});
-        })
-        .catch((error => {
-            console.log(error);
-        }));
+    axios.request(opt).then(function (resp) {
+        response.set('Content-Type', 'text/html');
+        response.render('scorers', {result: resp.data.topPlayers.goals});
+    }).catch(function (error) {
+        console.error(error);
+    });
 });
 
 /**

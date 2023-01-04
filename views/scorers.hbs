@@ -23,9 +23,9 @@
               </div>
               <div class="card-body">
                 <p class="card-text">
-                        {{#each result.scorers}}
+                        {{#each (limit result 10)}}
                             <li>
-                                <strong>{{ player.name }} - {{team.name}} - {{ numberOfGoals }}</strong>
+                                <strong>{{ player.name }} - {{team.name}} - {{ statistics.goals }}</strong>
                             </li>
                         {{/each}}
                 </p>

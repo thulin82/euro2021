@@ -20,4 +20,13 @@ $ npm install
 $ npm start
 ```
 
+### Environment variables
+In config/config.env add
+```
+API_KEY =
+API_KEY2 =
+HOST =
+URL =
+```
+
 © Markus Thulin 2021-

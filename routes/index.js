@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const dotenv = require('dotenv');
 const axios = require('axios');
+const URL = "https://api.football-data.org/v4/competitions/2018/matches";
 
 dotenv.config();
 
@@ -19,12 +20,12 @@ router.get('/', function (req, response) {
     };
 
     axios.all([
-        axios.get(process.env.URL + "/matches?season=2021&group=Group%20A", opt),
-        axios.get(process.env.URL + "/matches?season=2021&group=Group%20B", opt),
-        axios.get(process.env.URL + "/matches?season=2021&group=Group%20C", opt),
-        axios.get(process.env.URL + "/matches?season=2021&group=Group%20D", opt),
-        axios.get(process.env.URL + "/matches?season=2021&group=Group%20E", opt),
-        axios.get(process.env.URL + "/matches?season=2021&group=Group%20F", opt)
+        axios.get(URL + "?season=2021&group=Group%20A", opt),
+        axios.get(URL + "?season=2021&group=Group%20B", opt),
+        axios.get(URL + "?season=2021&group=Group%20C", opt),
+        axios.get(URL + "?season=2021&group=Group%20D", opt),
+        axios.get(URL + "?season=2021&group=Group%20E", opt),
+        axios.get(URL + "?season=2021&group=Group%20F", opt)
     ]).then(axios.spread((resp1, resp2, resp3, resp4, resp5, resp6) => {
         response.set('Content-Type', 'text/html');
         response.render('index',
@@ -44,11 +45,11 @@ router.get('/', function (req, response) {
 router.get('/standings', function (req, response) {
     var opt = {
         method: 'GET',
-        url: "https://" + process.env.HOST + "/tournaments/get-standings",
+        url: "https://divanscore.p.rapidapi.com/tournaments/get-standings",
         params: {tournamentId: '1', seasonId: '26542'},
         headers: {
             'x-rapidapi-key': process.env.API_KEY2,
-            'x-rapidapi-host': process.env.HOST
+            'x-rapidapi-host': "divanscore.p.rapidapi.com"
         }
     };
 
@@ -68,11 +69,11 @@ router.get('/standings', function (req, response) {
 router.get('/scorers', function (req, response) {
     const opt = {
         method: 'GET',
-        url: "https://" + process.env.HOST + "/tournaments/get-top-players",
+        url: "https://divanscore.p.rapidapi.com/tournaments/get-top-players",
         params: {tournamentId: '1', seasonId: '26542'},
         headers: {
             'x-rapidapi-key': process.env.API_KEY2,
-            'x-rapidapi-host': process.env.HOST
+            'x-rapidapi-host': "divanscore.p.rapidapi.com"
         }
     };
 
